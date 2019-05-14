@@ -18,7 +18,7 @@ options:
 .c.o:
 	$(CC) $< $(STCFLAGS) -c
 
-st.o: st.h win.h
+st.o: config.h st.h win.h
 x.o: arg.h st.h win.h
 
 $(OBJ): config.mk
