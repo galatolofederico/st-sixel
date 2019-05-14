@@ -1,6 +1,6 @@
 # st
 
-This is a fork of the excellent [st](https://st.suckless.org/) terminal by
+This is a fork of [a fork](https://github.com/charlesdaniels/st) of the excellent [st](https://st.suckless.org/) terminal by
 Suckless (most recently based on st-0.8.1). `st` is configured by forking and
 applying appropriate patching and source modifications. This repository
 constitutes my personal configuration of `st`.
@@ -40,9 +40,11 @@ https://gist.github.com/saitoha/70e0fdf22e3e8f63ce937c7f7da71809 and modified.
 This looks like it has some GPL licensed code in it, so you should probably
 consider my fork to be GPL also.
 
-All modifications that constitute my own own original work are (c) 2018 Charles
+All modifications that constitute charlesdaniels original work are (c) 2018 Charles
 Daniels, All Rights Reserved, and may be considered available under the terms
 of the suckless license.
+
+All my modifications are under the GPL license
 
 ## See Also
 
