@@ -2118,6 +2118,21 @@ tprinter(char *s, size_t len)
 void
 externalpipe(const Arg *arg)
 {
+	char buffer[1024] = {};
+	char *app;
+	if (arg->i > 0){
+		XEvent ev;
+		XNextEvent(xw.dpy, &ev);
+		if(ev.type == KeyPress){
+			char text[32] = {};
+			Status status;
+			KeySym keysym = NoSymbol;
+			Xutf8LookupString(xw.xic, &ev.xkey, text, sizeof(text) - 1, &keysym, &status);
+			sprintf(buffer, ((char **)arg->v)[arg->i], text);
+			app = ((char **)arg->v)[arg->i];
+			((char **)arg->v)[arg->i] = buffer;
+		}
+	}
 	int to[2];
 	char buf[UTF_SIZ];
 	void (*oldsigpipe)(int);
@@ -2166,6 +2181,7 @@ externalpipe(const Arg *arg)
 	close(to[1]);
 	/* restore */
 	signal(SIGPIPE, oldsigpipe);
+	((char **)arg->v)[arg->i] = app;
 }
 
 void

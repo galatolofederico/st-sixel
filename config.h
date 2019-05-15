@@ -164,6 +164,12 @@ MouseKey mkeys[] = {
 	{ Button5,              ShiftMask,      kscrolldown,    {.i =  1} },
 };
 
+/* External pipes */
+static char *handle_terminal[] = { "/bin/sh", "-c",
+	"handle_terminal %s",
+	"externalpipe", NULL };
+
+
 /* Internal keyboard shortcuts. */
 #define MODKEY Mod1Mask
 #define TERMMOD (ControlMask|ShiftMask)
@@ -179,11 +185,12 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
-	{ ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
-	{ ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+	{ TERMMOD,              XK_Up,          kscrollup,      {.i = -1} },
+	{ TERMMOD,              XK_Down,        kscrolldown,    {.i = -1} },
     { TERMMOD,              XK_KP_Add,      zoom,           {.f = +1} },
     { TERMMOD,              XK_KP_Subtract, zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
+	{ TERMMOD,				XK_H,           externalpipe,   {.v = handle_terminal, .i = 2} },
 };
 
 

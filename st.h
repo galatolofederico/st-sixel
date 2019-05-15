@@ -140,7 +140,7 @@ typedef struct {
 	ImageList *images_alt; /* sixel images for alternate screen */
 } Term;
 
-typedef union {
+typedef struct {
 	int i;
 	uint ui;
 	float f;
