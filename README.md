@@ -1,21 +1,21 @@
 # st
 
-This is a fork of [a fork](https://github.com/charlesdaniels/st) of the excellent [st](https://st.suckless.org/) terminal by
-Suckless (most recently based on st-0.8.1). `st` is configured by forking and
-applying appropriate patching and source modifications. This repository
-constitutes my personal configuration of `st`.
+This is a fork of [a fork](https://github.com/charlesdaniels/st) of the excellent [st](https://st.suckless.org/) terminal patched with a patch of [a patch](https://st.suckless.org/patches/externalpipe/).
+
+This repository constitutes my personal configuration of `st`.
 
 ## Changes From the Default:
 
-![st displaying a gnuplot test to demonstrate sixel graphics support](./README.md.d/sixeldemo.png)
+![st displaying an octocat to demonstrate sixel graphics support](./README.md.d/sixeldemo.png)
 
-*st displaying a gnuplot test to demonstrate sixel graphics support*
 
 * All [scrollback](https://st.suckless.org/patches/scrollback/) patches have
   been applied.
+* The externalpipe patch has been applied and patched
+	* When the integer argument is greater than zero st reads a char from the stdin
+	* You can now pass a `parametric` argument to externalpipe to be set to the read char 
+	* The `parametric` argument must be indicated by the integer argument
 * The colorscheme has been set to [gruvbox](https://github.com/morhetz/gruvbox).
-* The font has been set to [gohufont](http://font.gohu.org/).
-* The cursor has been configured to be a red I-beam style.
 * Experimental support for sixel graphics has been added. There are several
   known issues:
 	* Entering `clear` causes *all* sixels to be deleted from scrollback.
