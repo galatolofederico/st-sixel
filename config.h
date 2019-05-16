@@ -166,7 +166,7 @@ MouseKey mkeys[] = {
 
 /* External pipes */
 static char *handle_terminal[] = { "/bin/bash", "-c",
-	"source ~/.bashrc && handle_terminal %s",
+	"~/bin/handle_terminal %s",
 	"externalpipe", NULL };
 
 
