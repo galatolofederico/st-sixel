@@ -187,10 +187,12 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_I,           iso14755,       {.i =  0} },
 	{ TERMMOD,              XK_Up,          kscrollup,      {.i = -1} },
 	{ TERMMOD,              XK_Down,        kscrolldown,    {.i = -1} },
-    { TERMMOD,              XK_KP_Add,      zoom,           {.f = +1} },
-    { TERMMOD,              XK_KP_Subtract, zoom,           {.f = -1} },
+	{ TERMMOD,              XK_KP_Add,      zoom,           {.f = +1} },
+	{ TERMMOD,              XK_KP_Subtract, zoom,           {.f = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
-	{ TERMMOD,				XK_H,           externalpipe,   {.v = handle_terminal, .i = 2} },
+	{ TERMMOD,              XK_H,           externalpipe,   {.v = handle_terminal, .i = 2} },
+	{ TERMMOD,              XK_J,           kscrolldown,    {.i = -1} },
+	{ TERMMOD,              XK_K,           kscrollup,      {.i = -1} },
 };
 
 
