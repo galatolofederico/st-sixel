@@ -28,6 +28,11 @@ This repository constitutes my personal configuration of `st`.
 * CSI S and T escape behavior has been modified to fix a bug where S or T
   escapes would sometimes cause lines to be deleted from the scrollback buffer.
 
+## known-problems
+
+* There is a bug in `libxft` when rendering colored emojis, in arch install the patched version `libxft-bgra` from AUR
+
+
 ## Attribution
 
 Almost all of the code in this repository is not my work, but the work of the
